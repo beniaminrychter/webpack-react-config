@@ -2,7 +2,7 @@
 
 ### How to install:
 1. `git clone https://github.com/beniaminrychter/webpack-react-config`
-2. `cd webpack-react-demo`
+2. `cd webpack-react-config`
 3. `npm i`
 
 Then `npm start` for development mode, and `npm run build` for production.
