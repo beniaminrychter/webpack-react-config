@@ -1,7 +1,7 @@
-# Webpack React Demo App
+# Webpack React - Config
 
 ### How to install:
-1. `git clone https://github.com/beniaminrychter/webpack-react-demo`
+1. `git clone https://github.com/beniaminrychter/webpack-react-config`
 2. `cd webpack-react-demo`
 3. `npm i`
 

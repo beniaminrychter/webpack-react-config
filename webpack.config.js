@@ -23,40 +23,11 @@ module.exports = function(env) {
   config.module = {};
   config.module.rules = [];
 
-  const browsers = {
-    dev: ["Chrome > 60"],
-    prod: ["> 3%"]
-  };
-
   const js = {
     test: /\.js$/,
     exclude: /node_modules/,
     use: {
-      loader: "babel-loader",
-      options: {
-        presets: [
-          [
-            "@babel/preset-env",
-            {
-              targets: {
-                browsers: isDev ? browsers.dev : browsers.prod
-              }
-            }
-          ],
-          "@babel/preset-react"
-        ],
-        plugins: [
-          ["@babel/plugin-proposal-decorators", { legacy: true }],
-          "@babel/plugin-proposal-function-sent",
-          "@babel/plugin-proposal-export-namespace-from",
-          "@babel/plugin-proposal-numeric-separator",
-          "@babel/plugin-proposal-throw-expressions",
-          "@babel/plugin-syntax-dynamic-import",
-          "@babel/plugin-syntax-import-meta",
-          ["@babel/plugin-proposal-class-properties", { loose: false }],
-          "@babel/plugin-proposal-json-strings",
-        ],
-      }
+      loader: "babel-loader"
     }
   };
   config.module.rules.push(js);
@@ -75,9 +46,7 @@ module.exports = function(env) {
         loader: "postcss-loader",
         options: {
           plugins: () => [
-            new require("autoprefixer")({
-              browsers: isProd ? browsers.prod : browsers.dev
-            })
+            new require("autoprefixer")
           ]
         }
       },
